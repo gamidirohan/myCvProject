@@ -1,0 +1,243 @@
+:root * {   /* the * selects all elements, where root is the root of the document, aka html file... we here set the defaults of the file*/
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+.parallax {
+    background-image: url("https://images.pexels.com/photos/1772970/pexels-photo-1772970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    height: 650px;
+    width: 78%;
+  
+    /* Creating the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0.5%;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 500px;
+    margin-top: 30px;
+    margin-right: 50px;
+    opacity: 0.7;
+  }
+
+
+
+:root {  /*defines the most important part/ with highest specificity in the code*/
+    --intro-width: 325px;
+    --intro-height: 670px;
+    --intro-radius: 25px;
+    --separator-height: 500px;
+    
+    --bg: #fdf3f2;
+    --intro-bg: #cac7ff;
+    --intro-bg: #eed7d1;
+    --font-color: #807b7b;
+    --transition: transform 0.7s ease-in-out;
+  }
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row; 
+  align-items:flex-start;   /* starts all the container items from the top*/
+  justify-content: left;
+  background-color: var(--bg);
+}
+
+.profile{
+  padding-top: 10%;
+}
+
+.profile button{
+    background-color: #4CAF50;
+    border-radius: 5%;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.profilePic{
+  width : 250px;
+  height: 250px;
+  border-radius:50%;
+  border:3px solid var(--gray);
+  
+}
+
+
+
+.layout {
+  width: var(--intro-width);
+  height: 50%;
+  margin: 30px;
+  border-radius: var(--intro-radius);
+  perspective: 500px;    /*the distance from the screen and the 3D effectted book*/
+  overflow:-moz-hidden-unscrollable;
+  overflow-x: auto;
+  color: var(--font-color);
+  background-color: #7277ff;
+  box-shadow: 18px 18px 25px 8px #c2c3f4;
+}
+  
+  .actions { 
+    color: white;
+    position: fixed;
+    top: 37px;
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    z-index: 6;
+  }
+  
+  .book-cover {
+    position: relative;
+    height: var(--separator-height);
+    width: calc(var(--intro-width) * 2);
+    left: -52.5%;
+    border-top-left-radius: var(--intro-radius);
+    border-top-right-radius: var(--intro-radius);
+    background-color: #4b50dc;
+    transform-style: preserve-3d;
+    transform-origin: 50% 40%;
+    transition: var(--transition);
+    z-index: 4;
+  }
+  
+  .book-top {
+    width: 170px;
+    position: absolute;
+    top: 180px;
+    left: 250px;
+    z-index: 5;
+    transform: translateZ(28.5px); 
+  }
+
+  .book-side {
+    position: absolute;
+    top: 430px; 
+    left: 222px;
+    transform: translateY(-15px) translateX(0px) translateZ(15px) rotateX(104deg);
+  }
+  
+  .book-cover:hover {
+    transform: rotateX(75deg) translateZ(3px) scale(0.75);
+  }
+
+  .book-cover:hover + .preface {
+    transform: translateY(-302px);
+    .icon{
+      transform: rotateX(180deg);
+    }
+  }
+  
+  .preface {
+    height: var(--separator-height);
+    padding: 50px;
+    transition: var(--transition);
+    background-image: radial-gradient(#ffffff, #7277ff);
+  }
+
+  .header {
+        display: flex;
+        align-items: center;
+      }
+
+  .title {
+        font-family: 'Quicksand', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        font-style: italic;
+        overflow: visible;
+        font-size: 26px;
+        margin-top: 10px;
+      }
+
+  .icon {
+        transform-origin: top;
+        transition: var(--transition);
+      }
+
+  .body {
+        font-family: 'Quicksand', sans-serif;
+      }
+
+  .body p:first-child {
+        margin-bottom: 15px;
+      }
+
+
+  .Education table, .Education th,.Education td{
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+
+      
+      .card {
+        position: absolute;
+        width: 25%;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      
+      .chat-header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        font-size: 18px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+      
+      .chat-window {
+        height: 220px;
+        overflow-y: scroll;
+      }
+      
+      .message-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .chat-input {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-top: 1px solid #ccc;
+      }
+      
+      .message-input {
+        flex: 1;
+        border: none;
+        outline: none;
+        padding: 5px;
+        font-size: 14px;
+      }
+      
+      .send-button {
+        border: none;
+        outline: none;
+        background-color: #333;
+        color: #fff;
+        font-size: 14px;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+      
+      .send-button:hover {
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+      }
